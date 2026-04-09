@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "services": {
+    "mimic-pro-v3": {
+      "path": "./index.ts",
+      "entry": "handler",
+      "pay_to": "0xca822f91db3a764ec6dbc141e21115c4670dc92c",
+      "config": {
+        "pricing_model": "percentage",
+        "bps": 1,
+        "asset": "USDC",
+        "chain": "base"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "leader": { "type": "string" },
+          "follower": { "type": "string" },
+          "amount": { "type": "number" },
+          "side": { "type": "string" }
+        },
+        "required": ["leader", "follower", "amount", "side"]
+      }
+    }
+  }
+}
