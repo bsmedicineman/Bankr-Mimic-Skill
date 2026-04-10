@@ -1,49 +1,181 @@
-# Mimic Pro
+# Mimic Pro (B4NKR 4D Enabled)
 
-Advanced real-time copy-trading skill that allows agents to intelligently mimic (or inversely mirror) the trading behavior of any wallet or token with configurable risk management, position sizing, and multi-chain support.
+Advanced real-time copy-trading and **vector-based market execution skill** that allows agents to mimic, invert, or **program market behavior** using a 4D hyperspace model.
+
+---
 
 ## Author
-- **bsmedicineman**
-- Base (EVM): `0xca822f91db3a764ec6dbc141e21115c4670dc92c`
-- Solana: `AWZd4fMYiFMEHTjGgkTKqV5PHir712XaDwoMEgbUWurx`
+
+* **bsmedicineman**
+* Base (EVM): `0xca822f91db3a764ec6dbc141e21115c4670dc92c`
+* Solana: `AWZd4fMYiFMEHTjGgkTKqV5PHir712XaDwoMEgbUWurx`
+
+---
+
+## Core Concept
+
+Every trade is treated as a **4D vector**:
+
+```
+(ΔY, ΔX, ΔZ, ΔW)
+```
+
+* **Y (Price Axis)** → Mimic / Inverse pressure
+* **X (Momentum Axis)** → Acceleration / Reversal
+* **Z (Liquidity Axis)** → Absorption (black hole) / Injection (flood)
+* **W (Peg Axis)** → Correlation to external assets (BTC, gold, USD, tokens)
+
+This transforms trading from simple execution into a **programmable market physics system**.
+
+---
 
 ## Capabilities
 
-- Real-time monitoring of target wallets/tokens
-- Direct mimic, inverse trading, 30-minute candle replication, and supply matching strategies
-- Peg ratio support for chart replication (e.g. follow 35% of BANKR's 30m candles)
-- Powerful inverse mode suitable for building stablecoins, black holes, inverse gold/oil, or contrarian assets
-- Intelligent position sizing and risk management (stop-loss, take-profit)
-- Multi-chain support (Base primary, Solana secondary)
-- 0.1% developer fee per trade
+### Trading Engine
+
+* Real-time monitoring of wallets and tokens
+* Direct mimic + inverse trading
+* 30-minute candle replication
+* Supply matching strategies
+* Peg ratio support (e.g. follow 35% of a token’s movement)
+
+### 4D Hyperspace Layer (NEW)
+
+* Script-driven vector execution
+* Multi-script blending (combine strategies)
+* Momentum + volatility reactive behavior (MACD + Bollinger Bands)
+* Chaos injection for non-linear behavior
+* Vector normalization to control risk
+
+### Strategy Modes
+
+* Mimic (copy behavior)
+* Inverse (mirror opposite)
+* Peg (correlate to asset)
+* Contrarian (break correlation)
+* Liquidity manipulation (absorb or flood)
+
+### Risk & Execution
+
+* Stop-loss / take-profit
+* Adjustable momentum + liquidity bias
+* Execution styles (instant, gradual, reactive, triggered)
+* Multi-chain support (Base primary, Solana secondary)
+
+### Fees
+
+* **0.1% per trade**
+* Automatically routed to developer wallet
+
+---
+
+## Hyperspace Scripts
+
+Prebuilt strategies that define vector behavior:
+
+* **Pump / Turbo**
+* **Flash Pump / Flash Rug**
+* **User Shadow (copy trading)**
+* **User Inverse**
+* **BTC / Gold / USD Pegs**
+* **Liquidity Blackhole / Flood**
+* **Momentum Reversal**
+* **Volatility Breakout**
+* **Mean Reversion**
+* **Chaos Mode**
+
+Scripts can be combined:
+
+```
+"hyperspace_script": ["turbo-mode", "btc-peg"]
+```
+
+---
 
 ## Usage Examples
 
-- "Start mimicking 0xLeaderAddress with 2% portfolio allocation and 8% stop loss"
-- "Replicate the 30-minute candle movement of BANKR on my token with 0.4 peg ratio"
-- "Match 0.5% of the supply bought of token X in the last 30 minutes"
-- "Create the inverse of gold using inverse strategy with 0.75 peg ratio"
-- "Show performance report for my mimic strategy"
+* "Start mimicking 0xLeaderAddress with 2% allocation and 8% stop loss"
+* "Replicate BANKR 30m candles with 0.4 peg ratio"
+* "Run turbo-mode + btc-peg during breakout"
+* "Create inverse gold with 0.75 peg ratio"
+* "Mirror this wallet but invert momentum"
+* "Absorb liquidity during sell pressure"
+
+---
+
+## Input Parameters
+
+Supported JSON fields:
+
+* `leader`
+* `referenceToken`
+* `pegRatio`
+* `amount`
+* `side`
+* `strategy` (mimic / inverse)
+* `stopLoss`
+* `takeProfit`
+
+### 4D Controls
+
+* `y_bias` → price direction
+* `x_momentum` → acceleration
+* `z_gravity` → liquidity behavior
+* `w_peg_ratio` → correlation strength
+* `chaos_factor` → randomness injection
+* `fluid_mode` → adaptive behavior
+* `hyperspace_script` → strategy selection (single or array)
+
+---
 
 ## Implementation
 
-See the implementation files in this folder:
-- `index.ts` — Main handler logic (x402 compatible)
-- `x402.json` — Configuration and schema
+* `index.ts` — Execution engine (interprets vectors + scripts)
+* `x402.json` — Schema + configuration
 
-The handler supports structured JSON input including: `leader`, `referenceToken`, `pegRatio`, `amount`, `side`, `strategy`, `stopLoss`, and `takeProfit`.
+The engine:
+
+1. Observes market inputs (wallets, tokens, indicators)
+2. Applies hyperspace scripts → generates vectors
+3. Blends + normalizes vectors
+4. Executes trades based on final vector output
+
+---
 
 ## Fees
 
-**0.1%** of notional trade volume is sent to the skill developer on every trade:
-- Base: `0xca822f91db3a764ec6dbc141e21115c4670dc92c`
-- Solana: `AWZd4fMYiFMEHTjGgkTKqV5PHir712XaDwoMEgbUWurx`
+**0.1%** of notional trade volume per execution:
+
+* Base: `0xca822f91db3a764ec6dbc141e21115c4670dc92c`
+* Solana: `AWZd4fMYiFMEHTjGgkTKqV5PHir712XaDwoMEgbUWurx`
+
+---
 
 ## Risk Warning
 
-Copy-trading and chart replication carry substantial risk. Use with proper risk parameters and only risk capital you can afford to lose.
+This system can:
+
+* Amplify volatility
+* React aggressively to market conditions
+* Execute contrarian or inverse strategies
+
+Use strict risk parameters. Only deploy capital you can afford to lose.
+
+---
 
 ## Installation
 
-Agents can install this skill once merged using:
-`install the mimic-pro skill from https://github.com/bsmedicineman/Bankr-Mimic-Skill-v3`
+```
+install the mimic-pro skill from https://github.com/bsmedicineman/Bankr-Mimic-Skill-v3
+```
+
+---
+
+## Final Note
+
+Mimic Pro is no longer just a copy-trading tool.
+
+It is a **programmable market behavior engine** —
+where agents don’t just follow the market…
+
+they **shape it**.
