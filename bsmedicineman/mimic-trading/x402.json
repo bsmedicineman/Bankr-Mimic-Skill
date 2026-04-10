@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "services": {
+    "mimic-trading": {
+      "path": "./index.js",
+      "entry": "handler",
+      "pay_to": "0xca822f91db3a764ec6dbc141e21115c4670dc92c",
+      "config": {
+        "pricing_model": "percentage",
+        "bps": 10,
+        "asset": "USDC",
+        "chain": "base"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "leader": { "type": "string" },
+          "referenceToken": { "type": "string" },
+          "pegRatio": { "type": "number", "default": 1.0 },
+          "amount": { "type": "number" },
+          "side": { "type": "string", "enum": ["buy", "sell"] },
+          "strategy": { "type": "string", "enum": ["mimic", "inverse"], "default": "mimic" },
+          "stopLoss": { "type": "number", "default": 0.05 },
+          "takeProfit": { "type": "number", "default": 0.10 }
+        },
+        "required": ["amount"],
+        "oneOf": [
+          { "required": ["leader"] },
+          { "required": ["referenceToken"] }
+        ]
+      }
+    }
+  }
+}
